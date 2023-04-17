@@ -1,0 +1,48 @@
+---
+type: tutorial
+title: Pour aller plus loin...
+---
+
+Il existe une infinité de possibilités pour personnaliser le jeu à votre manière. Vous pouvez augmenter la difficulté en modifiant le comportement des ennemis, ou peaufiner les sensations de jeu avec les effets sonores et les graphismes... Voici quelques suggestions pour vous inspirer :
+
+1. Faites que les ennemis tirent, eux aussi, des projectiles.
+
+<details>
+<summary>Indices</summary>
+
+1. Le principe sera le même que les fonctions `tirer()` et `update_missiles()`, mais ce seront les ennemis qui tireront, et les projectiles iront vers le bas.
+2. Vous pouvez créer un nouveau tableau qui stockera les missiles ennemis.
+3. Vous pouvez créer des fonctions `tirer()` et `update_missiles()` séparées pour le fonctionnement des ennemis, ou adapter les fonctions existantes.
+4. Lorsque le joueur entre en collision avec un élément du tableau des missiles ennemis, c'est le game over.
+
+</details>
+
+2. Donnez des points de vie au joueur, qui sont affichés dans l'interface.
+
+<details>
+<summary>Indices</summary>
+
+1. Vous pouvez afficher les points de vie avec la commande `print()` ou avec des sprites, à la manière des cœurs dans les jeux Zelda.
+2. Pensez à détruire les missiles ennemis lorsqu'ils entrent en contact avec le joueur.
+3. Vous pourriez ajouter une période d'invincibilité pendant une seconde après que le joueur se soit fait toucher. Vous aurez besoin d'un compteur de temps.
+
+</details>
+
+3. Créez un autre type d'ennemi qui se comporte différemment, par exemple en se déplaçant de gauche à droite, et qui rapporte plus de points.
+
+4. Ajouter des objets bonus (*power up*) qu'il faut attraper pour augmenter la vitesse du joueur, sa puissance ou ses points de vie.
+
+<details>
+<summary>Indices</summary>
+
+1. Pour augmenter la vitesse du joueur, vous pouvez simplement modifier la valeur de `v.vitesse`. Vous devrez peut-être créer d'autres variables pour modifier d'autres capacités du joueur.
+2. Pour que le bonus dure un temps limité, vous aurez besoin d'une variable de compteur.
+3. Vous pourriez changer le sprite du vaisseau pour indiquer qu'il est sous l'effet du bonus.
+
+</details>
+
+Vous pouvez ensuite faire tester votre jeu à vos amis et leur demander des conseils.
+
+Cette formation prend fin. Vous avez désormais appris les concepts de base de la programmation sur PICO-8. Vous pourrez utiliser vos nouvelles compétences pour réaliser d'autres jeux, et même apprendre à utiliser d'autres moteurs de jeu.
+
+Bonne continuation dans la création de votre shooter !

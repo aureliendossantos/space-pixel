@@ -1,0 +1,177 @@
+---
+import SkipToContent from './SkipToContent.astro';
+import SidebarToggle from './SidebarToggle';
+import ThemeToggleButton from './ThemeToggleButton';
+import { getLanguageFromURL } from '../../util';
+import { getDocSearchStrings, useTranslations } from '../../i18n/util';
+
+const { currentPage } = Astro.props;
+const lang = currentPage && getLanguageFromURL(currentPage);
+const t = useTranslations(Astro);
+---
+
+<header>
+	<SkipToContent />
+	<nav class="nav-wrapper" aria-label={t('navbar.a11yTitle')}>
+		<div class="logo flex -mt-1">
+			<ul>
+				<li>
+					<a
+						class="astro no-underline hover:no-underline text-lg min-w-[170px]"
+						href={`/${lang || 'fr'}/bien-demarrer/`}
+					>
+						<img src="/astro.png" class="max-h-9 -mb-2 mr-1 rounded" />
+						Space Pixel
+					</a>
+				</li>
+			</ul>
+		</div>
+		<a
+			href="/fr/bien-demarrer/#tutoriels"
+			class="bg-[#e4d4f2] hover:bg-[#e4c9f0] rounded-full py-1 px-2 -mx-1 sm:mx-0 sm:py-2 sm:px-4 no-underline hover:no-underline"
+			>Tutoriels</a
+		>
+		<a
+			href="/fr/bien-demarrer/#memo"
+			class="bg-[#e4d4f2] hover:bg-[#e4c9f0] rounded-full py-1 px-2 -mx-1 sm:mx-0 sm:py-2 sm:px-4 no-underline hover:no-underline"
+			>Fiches mémo</a
+		>
+	</nav>
+</header>
+
+<style>
+	@tailwind components;
+	@tailwind utilities;
+
+	header {
+		position: fixed;
+		left: 0;
+		top: 0;
+		right: 0;
+		height: var(--theme-navbar-height);
+		z-index: 11;
+		padding: 2rem 0;
+		background-color: var(--theme-navbar-bg);
+		display: flex;
+		align-items: center;
+		justify-content: left;
+		overflow: hidden;
+	}
+
+	ul,
+	li {
+		all: inherit;
+		flex-grow: 0;
+	}
+
+	.nav-wrapper {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 0.75rem;
+		width: 100%;
+		padding-inline: var(--min-spacing-inline);
+	}
+
+	/* If the device is likely to show a scrollbar gutter, reserve space for it */
+	@media (hover: hover) {
+		.nav-wrapper {
+			max-width: calc(100vw - 1.1rem);
+		}
+	}
+
+	.logo {
+		display: flex;
+		justify-content: flex-start;
+		font-size: 1rem;
+		flex-grow: 1;
+		flex-shrink: 0;
+		font-weight: 600;
+		line-height: 1;
+		color: hsla(var(--color-base-white), 100%, 1);
+		text-decoration: none;
+		gap: 0.5em;
+	}
+
+	:global([dir='rtl']) .logo {
+		justify-content: flex-end;
+	}
+
+	.logo a {
+		padding: 0.5em 0.25em;
+		margin: -0.5em -0.25em;
+	}
+
+	.logo svg {
+		height: 40px;
+		width: auto;
+		display: block;
+		color: var(--theme-accent);
+	}
+
+	.logo .hover {
+		opacity: 0;
+	}
+	.logo a {
+		transition: transform 180ms ease-out;
+	}
+
+	.logo a:hover,
+	.logo a:focus {
+		opacity: 1;
+		transform: translateY(-2px);
+	}
+
+	.logo a:focus:not(:focus-visible) {
+		outline: none;
+	}
+
+	.logo h1 {
+		font: inherit;
+		color: inherit;
+		margin: 0;
+	}
+
+	.astro {
+		overflow: hidden;
+		width: 41px;
+	}
+
+	.docs {
+		display: none;
+	}
+
+	@media (min-width: 20em) {
+		.docs {
+			display: inherit;
+			max-width: 80px;
+		}
+	}
+
+	@media (min-width: 23.5em) {
+		.docs {
+			max-width: none;
+		}
+		.nav-wrapper {
+			gap: 1rem;
+		}
+	}
+
+	@media (min-width: 50em) {
+		header {
+			padding: 2.5rem 0 1.5rem 0;
+		}
+		.astro {
+			width: auto;
+		}
+	}
+
+	@media (forced-colors: active) {
+		.text {
+			fill: LinkText;
+		}
+		.docs-path {
+			fill: ActiveText;
+		}
+	}
+</style>

@@ -1,0 +1,87 @@
+---
+type: tutorial
+title: Créer une vague d'ennemis
+---
+
+Pour le moment, la fonction `creer_ennemis()` ne peut créer qu'un ennemi à la fois, au milieu de l'écran. Nous allons améliorer cette fonction pour qu'elle puisse créer **plusieurs ennemis en même temps**, chacun à des **positions différentes**.
+
+## 1. Améliorer la fonction
+
+La fonction prendra un argument, par exemple `creer_ennemis(3)`, qui représente le nombre d'ennemis que l'on veut créer.
+
+1. Ajoutez un paramètre à la fonction `creer_ennemis()`, appelé `nombre`.
+
+```lua
+function creer_ennemis(nombre)
+```
+
+2. Pour que l'ennemi soit créé plusieurs fois, englobez le contenu de la fonction dans une boucle allant de 1 au `nombre`.
+
+```lua
+for i = 1, nombre do
+```
+
+3. Enfin, pour que chaque ennemi soit positionné différemment, changez `x` pour un nombre aléatoire entre 0 et 120.
+
+<details>
+<summary>Voir la solution complète</summary>
+
+<img src="/images/ennemis.png" />
+
+</details>
+
+## 2. Appeler la fonction
+
+Nous devons modifier notre appel de la fonction pour ajouter l'argument `nombre`.
+
+1. Retirez la ligne `creer_ennemis()` dans `_init()`, qui n'est plus nécessaire.
+2. Dans `_update60()`, ajoutez un nombre entier en argument, par exemple `creer_ennemis(3)`.
+
+## Bonus : vagues aléatoires
+
+Pour rendre les vagues d'ennemis plus aléatoires, vous pouvez renseigner un nombre aléatoire en argument. Cependant, la fonction `rnd()` renvoie un nombre décimal. Utilisez donc la fonction `flr()` qui permet d'arrondir un nombre vers le bas.
+
+Prenons un exemple. Pour obtenir entre 2 et 5 ennemis aléatoirement, écrivez :
+
+```lua
+creer_ennemis(2 + flr(rnd(4)))
+```
+
+:::note[explications]
+`rnd(4)` renvoie une nombre décimal entre 0 et 4.
+
+`flr(rnd(4))` est arrondi vers le bas, et peut donc valoir 0, 1, 2 ou 3.
+
+En fin de compte, `2 + flr(rnd(4))` peut valoir 2, 3, 4 ou 5.
+:::
+
+<Box icon="question-mark">
+
+  ### Teste tes connaissances
+
+  1. rnd() renvoie...
+
+    <MultipleChoice>
+      <Option message="Mauvaise réponse. rnd() renvoie un nombre décimal.">Un nombre entier</Option>
+      <Option isCorrect message="Bonne réponse. rnd() renvoie un nombre décimal plus petit que son argument.">Un nombre décimal</Option>
+      <Option message="Mauvaise réponse. rnd() renvoie un nombre décimal.">Un texte</Option>
+    </MultipleChoice>
+
+  2. flr() arrondit...
+
+    <MultipleChoice>
+      <Option message="Mauvaise réponse. flr() arrondit toujours au nombre en-dessous. 'flr' veut dire 'floor', c'est-à-dire plancher, vers le bas.">Au plus proche</Option>
+      <Option message="Mauvaise réponse. flr() arrondit toujours au nombre en-dessous. 'flr' veut dire 'floor', c'est-à-dire plancher, vers le bas.">Au-dessus</Option>
+      <Option isCorrect message="Bonne réponse. flr() arrondit toujours au nombre en-dessous. 'flr' veut dire 'floor', c'est-à-dire plancher, vers le bas.">En-dessous</Option>
+    </MultipleChoice>
+</Box>
+
+<Box icon="check-list">
+
+  ## Checklist
+
+  <Checklist>
+  - [ ] J'ai modifié ma fonction pour qu'elle prenne un nombre en argument.
+  - [ ] J'ai rendu le nombre d'ennemis aléatoire.
+  </Checklist>
+</Box>

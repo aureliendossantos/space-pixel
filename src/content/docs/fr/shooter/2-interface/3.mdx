@@ -1,0 +1,65 @@
+---
+type: tutorial
+title: Créer les états du jeu
+---
+
+Dans un jeu vidéo, il existe souvent plusieurs états différents, bien distincts.
+
+Pour le moment, `update` et `draw` calculent et affichent notre vaisseau, les ennemis, les étoiles... Cependant, nous ne voudrons pas afficher ces choses-là pendant le game over. Et inversement, la fenêtre de game over ne doit pas apparaître pendant la partie.
+
+Notre jeu contiendra donc les états suivants :
+
+- **L'état de jeu**, qui affiche le vaisseau et les ennemis. C'est tout ce que vous avez déjà programmé.
+- **L'état de game over**, qui affiche une fenêtre avec le score, et qui attend l'appui d'une touche pour relancer l'état de jeu. 
+
+Nous allons séparer le code dans ces deux états, en déplaçant tout notre code actuel dans l'**état de jeu**.
+
+:::caution[Avant de continuer]
+Au cours de cette étape, vous allez effectuer des modifications dans votre code existant. Pensez à **sauvegarder** pour éviter de perdre des données par erreur.
+:::
+
+1. Dans `_init()`, créez une nouvelle variable : `etat = 0`
+2. Renommez la fonction `_update60()` en `update_jeu()`.
+2. Renommez la fonction `_draw()` en `draw_jeu()`. Ce seront les deux fonctions de l'**état jeu**.
+3. Ajoutez ces nouvelles fonctions à votre code :
+
+```lua
+function _update60()
+  if (etat == 0) update_jeu()
+  if (etat == 1) update_gameover()
+end
+
+function _draw()
+  if (etat == 0) draw_jeu()
+  if (etat == 1) draw_gameover()
+end
+```
+
+Comme la valeur de `etat` est `0` au début du jeu, `_update60()` et `_draw()` vont appeler les fonctions `update_jeu()` et `draw_jeu()` que nous avons créées. Vérifiez que votre jeu fonctionne toujours.
+
+4. Dans un nouvel onglet nommé `--game over`, créez les nouvelles fonctions : `update_gameover()` et `draw_gameover()`.
+
+```lua
+--game over
+
+function update_gameover()
+end
+
+function draw_gameover()
+end
+```
+
+5. Dans la fonction `update_ennemis()`, rendez-vous à l'endroit où le joueur meurt. Remplacez la ligne qui appelle `_init()` par ceci : `etat = 1`. Cela déclenchera l'état de game over.
+6. Testez le jeu, qui devrait se figer au moment où l'on meurt. C'est normal : nous sommes bel et bien passés à l'**état game over**, mais pour le moment, il est complètement vide, donc il ne se passe rien.
+
+Vous avez maintenant ajouté la gestion des états à votre jeu. Par la suite, vous pourrez ajouter d'autres états, par exemple un **état écran-titre**. Mais d'abord, nous allons créer une interface pour le game over.
+
+<Box icon="check-list">
+
+  ## Checklist
+
+  <Checklist>
+  - [ ] Mes fonctions `_update60()` et `_draw()` appellent désormais d'autres fonctions d'après la variable `etat`.
+  - [ ] Mon jeu se fige quand je meurs, car il passe à l'état de game over.
+  </Checklist>
+</Box>

@@ -1,0 +1,66 @@
+---
+title: Exporter le jeu
+---
+
+Exporter votre jeu, c'est permettre à tout le monde de le lancer sur son ordinateur **sans avoir PICO-8**. Vous pouvez également l'exporter en **version web**, ce qui permet d'y jouer sur le navigateur de votre PC ou de votre téléphone.
+
+## 1. Créer une image de couverture
+
+Avant d'exporter votre jeu, vous avez besoin d'une image de couverture. Pour cela, rien de plus simple : lancez votre jeu, puis au moment qui vous convient, capturez une image avec <kbd>F7</kbd> ou <kbd>Ctrl</kbd> <kbd>7</kbd>. Un message vous avertira que la capture est réussie.
+
+## 2. Utiliser les commandes d'export
+
+Appuyez sur <kbd>Echap</kbd> pour revenir à l'écran principal de PICO-8 (l'écran où l'on tape les commandes `load` etc.).
+
+### Exporter les applications
+
+Écrivez cette commande puis appuyez sur <kbd>Entrée</kbd> :
+
+Exportez aussi votre jeu sous forme d'application pour Windows, Mac et Linux avec :
+
+```shell
+export monjeu.bin
+```
+
+Cela produira les fichiers pour Windows, Mac, Linux et Raspeberry Pi.
+
+Vous pouvez remplacer `monjeu` par le nom de votre choix, sans espace.
+
+### Exporter la version web
+
+Écrivez cette commande puis appuyez sur <kbd>Entrée</kbd> :
+
+```shell
+export -f monjeu.html
+```
+
+Cela produira un fichier HTML (à ouvrir dans votre navigateur) et un fichier JS (qui contient les données du jeu).
+
+:::tip
+L'argument `-f` n'est pas obligatoire mais il permet de placer les fichiers de l'export web dans un sous-dossier. C'est très pratique pour mieux vous y retrouver !
+:::
+
+## 3. Retrouver les fichiers exportés
+
+Les fichiers ont bien été créés, mais pour l'instant, on ne sait pas vraiment où... Entrez donc la commande suivante :
+
+```shell
+folder
+```
+
+Cela ouvrira le dossier des cartouches de PICO-8, qui devrait maintenant ressembler à ceci :
+
+<FileTree>
+- pico-8/carts/
+  - monjeu.p8 Fichier du jeu PICO-8
+  - monjeu_html/ Export web
+    - index.html Page web du jeu
+    - monjeu.js Fichier de données accompagnant la page web
+  - monjeu.bin/ Export des applications
+    - monjeu_linux.zip Linux
+    - monjeu_osx.zip Mac
+    - monjeu_raspi.zip Raspberry Pi
+    - monjeu_windows.zip Windows
+</FileTree>
+
+Bien joué, vous pouvez maintenant utiliser ces fichiers pour jouer à votre jeu ou l'envoyer à des amis !

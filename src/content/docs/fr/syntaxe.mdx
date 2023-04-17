@@ -1,0 +1,204 @@
+---
+title: Bien démarrer
+description: Une intro basique à Astro.
+---
+
+## Titre
+
+Paragraphe
+
+### Sous-titre
+
+Paragraphe
+
+### Italique et gras
+
+*Astro* est un **framework web tout-en-un** qui permet de construire des sites web **rapides** et **axés sur le contenu**.
+
+## Blocs
+
+<PreCheck>
+  - Installer l'application Visual Studio Code
+  - Installer l'extension PICO-8 pour VS Code
+  - Séparer votre jeu en plusieurs fichiers de script
+</PreCheck>
+
+:::tip
+Lorem ipsum
+:::
+
+:::note
+Lorem ipsum
+:::
+
+:::caution
+Lorem ipsum
+:::
+
+:::danger
+Lorem ipsum
+:::
+
+Le titre est personnalisable :
+
+:::note[À retenir]
+1. Writing an Astro template is very much like **writing HTML**, but you can include JavaScript expressions within it.
+2. The Astro frontmatter script contains only JavaScript. 
+3. You can use all modern JavaScript **logical operators**, **expressions** and **functions** in either section of your `.astro` file. But, curly braces are necessary (only) in the HTML template body.
+:::
+
+<Box icon="question-mark">
+
+  ### Teste tes connaissances
+
+  1. A `.astro` file's frontmatter is written in:
+
+    <MultipleChoice>
+      <Option>HTML</Option>
+      <Option>YAML</Option>
+      <Option isCorrect>JavaScript</Option>
+    </MultipleChoice>
+
+  2. In addition to HTML, Astro syntax allows you to include:
+
+    <MultipleChoice>
+      <Option isCorrect>JavaScript logical operators, expressions and functions</Option>
+      <Option>YAML</Option>
+      <Option>Markdown</Option>
+    </MultipleChoice>
+</Box>
+
+<Box icon="check-list">
+
+  ## Checklist
+
+  <Checklist>
+  - [ ] I can define values in and use values in `.astro` files.
+  - [ ] I can conditionally render HTML elements.
+  </Checklist>
+</Box>
+
+## Voir la solution
+
+Which color is the page title of:
+
+- Your Home page?  <Spoiler>black</Spoiler>
+- Your About page? <Spoiler>purple</Spoiler>
+- Your Blog page? <Spoiler>black</Spoiler>
+
+### Détails
+
+<details>
+<summary>How do I use the checklists at the bottom of each page?</summary>
+
+You check them off!
+
+At the end of each page, you'll find a clickable checklist of tasks you should now be able to do. Check these items off to see your progress in the Tutorial Tracker.
+</details>
+
+<details>
+<summary>What if I need help, or want to learn more about Astro?</summary>
+
+Our [friendly Astro Discord server](https://astro.build/chat) is the place to be! 
+
+Hop into the support forum channel to ask questions, or say hi and chat in `#general` or `#off-topic`.
+</details>
+
+## Liste
+
+- **Composants Islands:** Une nouvelle architecture web pour élaborer des sites web plus rapides.
+- **Design d'API Server-first:** Ne pas laisser aux périphériques utilisateurs le soin d'exécuter une hydratation coûteuse.
+- **Aucun JS, par défaut:** Aucune surcharge d'exécution JavaScript pour vous ralentir.
+
+1. Salut
+2. C'est moi
+3. Encore
+
+📚 [Ajouter une première page](/fr/core-concepts/astro-pages/) à votre site.
+
+📚 En savoir plus sur la [structure de projet](/fr/core-concepts/project-structure/) d'Astro.
+
+📚 En savoir plus sur le [routage basé sur les fichiers](/fr/core-concepts/routing/) d'Astro.
+
+## Liens
+
+Consultez l'article détaillé [Pourquoi Astro](/fr/concepts/why-astro/) pour en apprendre plus sur ce qui rend Astro spécial. ✨
+
+## Boutons rigolos
+
+<div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+  <Button href="https://www.lexaloffle.com/pico-8.php">Télécharger PICO-8</Button>
+  <Button variant="outline" href="https://www.pico-8-edu.com/">Utiliser sur le navigateur →</Button>
+</div>
+
+## Bloc de code
+
+Code `inline`
+
+```lua
+if (btn(x)) then
+  x += 1
+end
+```
+
+```shell
+export mon-jeu.html
+```
+
+```lua title="1 - Vaisseau" del={5,6,7,8} ins={2,3}
+if (btn(x)) then
+  x += 1
+  y += 1
+end
+if (btn(o)) then
+  x += 1
+  y += 1
+end
+```
+
+## Onglets
+
+<PackageManagerTabs>
+  <Fragment slot="Windows">
+  ```shell
+  # créer un nouveau projet avec npm
+  npm create astro@latest
+  ```
+  </Fragment>
+  <Fragment slot="Mac">
+  ```shell
+  # créer un nouveau projet avec pnpm
+  pnpm create astro@latest
+  ```
+  </Fragment>
+  <Fragment slot="Linux">
+  ```shell
+  # créer un nouveau projet avec yarn
+  yarn create astro
+  ```
+  </Fragment>
+</PackageManagerTabs>
+
+## FileTree
+
+<FileTree>
+- node_modules/
+- public/
+  - robots.txt
+- src/
+  - pages/
+    - index.astro
+  - env.d.ts
+- astro.config.mjs
+- package-lock.json ou `yarn.lock`, `pnpm-lock.yaml`, etc.
+- package.json
+- tsconfig.json
+</FileTree>
+
+### Ressources + badge externe
+
+- [Markdown Cheat Sheet from The Markdown Guide](https://www.markdownguide.org/cheat-sheet/)  <Badge>externe</Badge>
+
+- [What are browser developer tools? MDN](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_are_browser_developer_tools)  <Badge>externe</Badge>
+
+- [YAML frontmatter](https://assemble.io/docs/YAML-front-matter.html)  <Badge>externe</Badge>

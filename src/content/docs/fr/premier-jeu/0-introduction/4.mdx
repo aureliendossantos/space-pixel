@@ -1,0 +1,58 @@
+---
+type: tutorial
+title: Afficher la carte et le personnage
+---
+
+:::caution[Sauvegarder, c'est la santé]
+Pensez à **sauvegarder régulièrement** votre jeu avec <kbd>Ctrl</kbd> <kbd>S</kbd>.
+
+Si vous avez fermé PICO-8 sans avoir sauvegardé, vous pouvez retrouver une **sauvegarde de secours** du jeu dans le dossier `pico-8/backup`. Demandez à votre enseignant pour plus d'informations.
+:::
+
+Lorsque vous redémarrez PICO-8, vous pouvez retrouver votre jeu en tapant :
+
+```shell
+ls
+```
+
+Puis appuyez sur <kbd>Entrée</kbd>. Cela va afficher tous les jeux existants. Pour charger celui de votre choix, utilisez :
+
+```shell
+load nom-du-jeu
+```
+
+Vous êtes prêt ? Alors nous pouvons écrire nos premières lignes de code.
+
+<Video src="/videos/roxana/affichage-deplacement.mp4" controls />
+
+<Box icon="question-mark">
+
+  ### Teste tes connaissances
+
+  1. Comment affiche-t-on la carte et le personnage dans le jeu ?
+
+    <MultipleChoice>
+      <Option message="Ce n’est pas la bonne réponse. Il faut utiliser les fonctions map() et spr().">En important une image</Option>
+      <Option message="Ce n’est pas la bonne réponse, il faut utiliser les fonctions map() et spr().">En les dessinant pendant le jeu</Option>
+      <Option isCorrect message="C’est la bonne réponse, il faut utiliser les fonctions map() et spr().">En utilisant une fonction spécifique</Option>
+    </MultipleChoice>
+
+  2. Comment déplace-t-on le personnage ?
+
+    <MultipleChoice>
+      <Option isCorrect message="C’est la bonne réponse. Il faut utiliser une condition IF pour détecter si les touches fléchées ont été appuyées, puis changer les valeurs X et Y du personnage.">En modifiant les valeurs des variables</Option>
+      <Option message="Ce n’est pas la bonne réponse. Il faut utiliser une condition IF pour détecter si les touches fléchées ont été appuyées, puis changer les valeurs X et Y du personnage.">En dessinant un schéma</Option>
+      <Option message="Ce n’est pas la bonne réponse. Il faut utiliser une condition IF pour détecter si les touches fléchées ont été appuyées, puis changer les valeurs X et Y du personnage.">En utilisant une boucle</Option>
+    </MultipleChoice>
+</Box>
+
+<Box icon="check-list">
+
+  ## Checklist
+
+  <Checklist>
+  - [ ] J'ai réussi à afficher ma carte en utilisant la commande map().
+  - [ ] J'ai réussi à afficher mon personnage en utilisant la commande spr().
+  - [ ] J'ai réussi à faire déplacer le personnage en créant une condition qui vérifie l'appui d'une touche du clavier.
+  </Checklist>
+</Box>

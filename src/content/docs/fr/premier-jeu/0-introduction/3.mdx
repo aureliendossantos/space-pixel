@@ -1,0 +1,46 @@
+---
+type: tutorial
+title: La game loop
+---
+
+<Video src="/videos/roxana/capsule-gameloop.mp4" controls />
+
+<Box icon="question-mark">
+
+  ### Teste tes connaissances
+
+  1. Quel est le rôle de la game loop dans un jeu PICO-8 ?
+
+    <MultipleChoice>
+      <Option message="Ce n’est pas la bonne réponse, la game loop anime la logique et le rendu d'un jeu en exécutant les fonctions _update() et _draw() de manière répétitive à un intervalle régulier (30 ou 60 fois par seconde)">Elle permet de charger les graphismes</Option>
+      <Option message="Ce n’est pas la bonne réponse, la game loop anime la logique et le rendu d'un jeu en exécutant les fonctions _update() et _draw() de manière répétitive à un intervalle régulier (30 ou 60 fois par seconde)">Elle gère les contrôles de l'utilisateur</Option>
+      <Option isCorrect message="C’est la bonne réponse, la game loop anime la logique et le rendu d'un jeu en exécutant les fonctions _update() et _draw() de manière répétitive à un intervalle régulier (30 ou 60 fois par seconde)">Elle anime la logique et le rendu d'un jeu</Option>
+    </MultipleChoice>
+
+  2. Quelle est le rôle de la fonction _update() ?
+
+    <MultipleChoice>
+      <Option isCorrect message="Correct !">Exécuter toute la logique du jeu</Option>
+      <Option message="Ce n’est pas la bonne réponse, le rôle de la fonction _update() est d'exécuter toute la logique du jeu, par exemple vérifier si le joueur appuie sur un bouton, faire avancer le personnage, lancer des musiques ou des effets sonores. C'est la fonction _draw() qui permet d'afficher le grpahisme du jeu">Afficher les graphismes du jeu</Option>
+      <Option message="Ce n’est pas la bonne réponse, le rôle de la fonction _update() est d'exécuter toute la logique du jeu, par exemple vérifier si le joueur appuie sur un bouton, faire avancer le personnage, lancer des musiques ou des effets sonores. C'est la fonction _init() qui permet d'initialiser les variables">Initialiser les variables du jeu</Option>
+    </MultipleChoice>
+
+  3. Quelle fonction ne fait pas partie de la boucle principale du jeu ?
+
+    <MultipleChoice>
+      <Option message="Ce n’est pas la bonne réponse : celle qui ne fait pas partie de la boucle pincipale du jeu est la fonction _init() car elle est appelée une fois au démarrage du jeu pour initialiser les variables qui seront utilisées tout au long du jeu. Tandis que les fonctions _update() et _draw()  sont appelées à chaque cycle de la boucle de jeu, soit 30 ou 60 fois par seconde.">La fonction _update()</Option>
+      <Option message="Ce n’est pas la bonne réponse : celle qui ne fait pas partie de la boucle pincipale du jeu est la fonction _init() car elle est appelée une fois au démarrage du jeu pour initialiser les variables qui seront utilisées tout au long du jeu. Tandis que les fonctions _update() et _draw()  sont appelées à chaque cycle de la boucle de jeu, soit 30 ou 60 fois par seconde.">La fonction _draw()</Option>
+      <Option isCorrect message="C’est la bonne réponse ! La fonction _init() est appelée une fois au démarrage du jeu pour initialiser les variables qui seront utilisées tout au long du jeu ; tandis que les fonctions _update() et _draw() sont appelées à chaque cycle de la boucle de jeu, soit 30 ou 60 fois par seconde.">La fonction _init()</Option>
+    </MultipleChoice>
+    
+</Box>
+
+<Box icon="check-list">
+
+  ## Checklist
+
+  <Checklist>
+  - [ ] J'ai compris le rôle de la game loop dans un programme Pico-8.
+  - [ ] J'ai compris qu'il y a 3 fonctions à utiliser pour que le programme du jeu fonctionne normalement.
+  </Checklist>
+</Box>

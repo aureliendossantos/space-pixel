@@ -1,0 +1,53 @@
+---
+type: tutorial
+title: Détecter les collisions
+---
+
+Pour pouvoir toucher les ennemis avec nos tirs, nous devons détecter la collision entre chaque ennemi et chaque projectile. Dans la plupart des moteurs de jeux, il existe des solutions déjà existantes pour détecter les collisions, mais dans PICO-8, il faut le faire soi-même.
+
+Il existe de nombreuses manières de programmer les collisions. Ici, pour simplifier le code, nous partons du principe que les éléments que l'on détecte sont des carrés de 8x8 pixels. Nous devons comparer la position X et Y des différents carrés pour savoir s'ils sont éloignés ou s'ils sont superposés. Cela s'écrit en 4 conditions, qui sont présentées dans cette démo.
+
+:::note[Touches de la démo]
+<kbd>←</kbd> <kbd>→</kbd> <kbd>↑</kbd> <kbd>↓</kbd> Déplacer l'ennemi
+
+<kbd>E</kbd> <kbd>S</kbd> <kbd>D</kbd> <kbd>F</kbd> Déplacer le projectile
+:::
+
+<iframe width="538" height="539" style="border:0;border-radius:4px;"
+  src="/demos/collisions/index.html">
+</iframe>
+
+Essayez de déplacer les éléments de la démo. Vous pouvez voir que les 4 conditions permettent de vérifier si les positions X et Y des carrés sont éloignées. Si aucune condition n'est remplie, alors cela veut forcément dire que les deux carrés se superposent.
+
+Prêt à ajouter ces conditions à votre jeu ? Suivez le guide.
+
+<Video src="/videos/aurelien/collisions.mp4" controls />
+
+<Box icon="question-mark">
+
+  ### Teste tes connaissances
+
+  1. La fonction de collision renvoie...
+
+    <MultipleChoice>
+      <Option message="Mauvaise réponse. La fonction renvoie un booléen, true ou false, selon qu'il y ait collision ou non.">l'objet touché</Option>
+      <Option isCorrect message="Bonne réponse. La fonction renvoie un booléen, true ou false, selon qu'il y ait collision ou non.">un booléen</Option>
+    </MultipleChoice>
+
+  2. Cette fonction de collision peut être utilisée...
+
+    <MultipleChoice>
+      <Option message="Mauvaise réponse. Cette fonction de collision est séparée du code des ennemis et pourrait être utilisée pour d'autres éléments, par exemple des objets bonus ou le vaisseau du joueur.">Uniquement pour les projectiles et les ennemis</Option>
+      <Option isCorrect message="Bonne réponse. Cette fonction de collision est séparée du code des ennemis et pourrait être utilisée pour d'autres éléments, par exemple des objets bonus ou le vaisseau du joueur.">Pour d'autres contextes</Option>
+    </MultipleChoice>
+</Box>
+
+<Box icon="check-list">
+
+  ## Checklist
+
+  <Checklist>
+  - [ ] J'ai utilisé la valeur de retour de la fonction de collision.
+  - [ ] J'ai adapté le code pour faire perdre des points de vie à l'ennemi.
+  </Checklist>
+</Box>

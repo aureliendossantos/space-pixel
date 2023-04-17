@@ -1,0 +1,100 @@
+---
+type: tutorial
+title: Dessiner une interface
+---
+
+Il existe trois fonctions très utiles pour créer des interfaces.
+
+- Pour afficher du texte ou le contenu d'une variable :
+
+```lua
+print(texte, x, y, couleur)
+-- exemple :
+print("mon texte", 90, 2, 6)
+```
+
+- Pour afficher les contours d'un rectangle :
+
+```lua
+rect(x1, y1, x2, y2, couleur)
+-- exemple :
+rect(20, 20, 108, 108, 9)
+```
+
+:::note[Coordonnées du rectangle]
+`x1` `y1` représente le coin haut-gauche du rectangle, et `x2` `y2` le coin bas-droite.
+:::
+
+- Pour afficher un rectangle rempli avec la couleur :
+
+```lua
+rectfill(x1, y1, x2, y2, couleur)
+```
+
+En utilisant ces trois fonctions, il est possible de composer des interfaces complètes.
+
+## 1. Créer l'interface de game over
+
+Dessinez une interface qui vous plaît dans `draw_gameover()` en affichant le score.
+
+<details>
+<summary>Voir un exemple</summary>
+
+<img src="/images/go.png" />
+
+Pour réaliser cet exemple, il faut écrire le code suivant :
+
+<img src="/images/gocode.png" />
+
+</details>
+
+Si vous le souhaitez, vous pouvez même être créatif et agrémenter votre interface avec des sprites.
+
+## 2. Ajouter une interaction au game over
+
+Nous devrions permettre au joueur de recommencer le jeu en appuyant sur une touche. Nous n'allons pas utiliser la touche <kbd>X</kbd>, car il est possible que le joueur soit déjà en train d'enfoncer la touche parce qu'il tirait pendant la partie.
+
+Dans PICO-8, il y a 2 touches d'action : <kbd>X</kbd> et <kbd>C</kbd>, qui sont représentées par les symboles X et O dans le code. Nous utiliserons donc la touche <kbd>C</kbd> (symbole O).
+
+Ecrivez la condition suivante dans `update_gameover()`. Vous pouvez écrire le symbole O avec <kbd>Shift</kbd> <kbd>O</kbd>.
+
+<img src="/images/goupd.png" />
+
+:::note[pourquoi appeler init ?]
+Au lieu d'appeler `_init()` dans la condition, vous auriez peut-être voulu écrire `etat = 0` pour repasser à l'**état jeu**. Le problème, c'est que vous reviendriez à la scène de jeu telle qu'elle était juste avant, c'est-à-dire avec votre vaisseau en contact avec l'ennemi.
+
+En appelant `_init()`, vous redonnez aux variables leurs valeurs de départ, ce qui remet `etat` à `0` par la même occasion.
+:::
+
+Pour finir, vous pouvez ajouter le texte « Appuyez sur C pour continuer » sur votre interface.
+
+<Box icon="question-mark">
+
+  ### Teste tes connaissances
+
+  1. Pour afficher un carré rempli de bleu, j'utilise...
+
+    <MultipleChoice>
+      <Option message="Mauvaise réponse. pset() sert à dessiner un pixel de couleur.">pset()</Option>
+      <Option isCorrect message="Bonne réponse. rectfill() utilise la couleur donnée en argument pour remplir le rectangle.">rectfill()</Option>
+      <Option message="Mauvaise réponse. rect() sert à dessiner les contours d'un rectangle.">rect()</Option>
+    </MultipleChoice>
+
+  2. `print()` prend en argument...
+
+    <MultipleChoice>
+      <Option message="Mauvaise réponse. print() peut afficher des textes et des nombres.">Un texte</Option>
+      <Option isCorrect message="Mauvaise réponse. print() peut afficher des textes et des nombres.">Un nombre</Option>
+      <Option isCorrect message="Bonne réponse. print() peut afficher des textes et des nombres.">Les deux</Option>
+    </MultipleChoice>
+</Box>
+
+<Box icon="check-list">
+
+  ## Checklist
+
+  <Checklist>
+  - [ ] J'ai utilisé `print()` et les fonctions de rectangle pour dessiner une interface.
+  - [ ] Je peux relancer le jeu en appuyant sur <kbd>C</kbd>.
+  </Checklist>
+</Box>

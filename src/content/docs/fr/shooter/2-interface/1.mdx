@@ -1,0 +1,33 @@
+---
+type: tutorial
+title: Afficher un score
+---
+
+Le score est un élément central des jeux d'arcade, car c'est ce qui motive les joueurs à recommencer et à se donner des défis. Nous allons afficher le score dans le coin de l'écran, de sorte à ce qu'il soit toujours visible.
+
+<PreCheck>
+- Déclarer une variable `score` et la faire augmenter
+- Afficher un texte en cours de jeu
+</PreCheck>
+
+1. Dans `_init()`, créez une nouvelle variable : `score = 0`.
+
+2. Dans `_draw()`, ajoutez une nouvelle ligne pour afficher le score :
+
+```lua
+print(score, 0, 0, 7)
+```
+
+La commande `print()` permet d'afficher du texte ou le contenu d'une variable. Les arguments suivants sont la position X et Y ainsi que la couleur. Essayez de changer la couleur et la position pour obtenir un résultat qui vous plaît.
+
+3. Pour le moment, le score reste toujours à 0. Dans la fonction `update_ennemis()`, à l'endroit où l'ennemi est détruit, ajoutez une nouvelle ligne : `score += 100`. Un grand nombre rend le jeu plus amusant !
+
+<Box icon="check-list">
+
+  ## Checklist
+
+  <Checklist>
+  - [ ] J'ai affiché mon score avec la fonction `print()`.
+  - [ ] Le score augmente quand un ennemi meurt.
+  </Checklist>
+</Box>

@@ -1,0 +1,22 @@
+---
+export interface Props {
+	href: string;
+	img?: string;
+}
+
+const { href, img } = Astro.props;
+---
+
+<a
+	href={href}
+	class={'bg-[#e4d4f2] hover:bg-[#e4c9f0] p-4 text-center rounded-xl flex justify-center transition-all ease-out no-underline hover:no-underline bg-cover bg-center ' +
+		(img && 'text-white text-xl')}
+	style={{ backgroundImage: `url('${img}');`, textShadow: img ? `0 0 0.2em black` : 'none' }}
+>
+	<slot />
+</a>
+
+<style>
+	@tailwind components;
+	@tailwind utilities;
+</style>

@@ -1,0 +1,86 @@
+---
+type: tutorial
+title: Animer une explosion
+---
+
+Dans cette étape, nous allons réaliser un petit effet d'explosion lorsque l'on touche un ennemi. C'est une animation qui **dure dans le temps** : elle s'étend sur 12 images, ou 12 *frames* en anglais, ce qui représente une fraction de seconde.
+
+Pour réaliser l'animation, nous aurons besoin d'un compteur pour savoir à quelle *frame* nous nous situons. Au début de l'animation, le compteur sera à 1. À chaque cycle d'`update`, le compteur augmentera de 1. Au bout de 12 cycles d'`update`, le compteur aura dépassé 12 et l'animation sera terminée.
+
+## 1. Créer les données d'explosion
+
+1. Dans `_init()`, créez un tableau vide `explosions = {}`
+2. Dans un nouvel onglet, déclarez une fonction `creer_explosion(x,y)`. Elle prend des paramètres `x,y` (qui seront les coordonnées de l'impact) et ajoute un élément au tableau `explosions`.
+
+<img src="/images/expl1.png" />
+
+3. Déclarez une fonction `update_explosions()` qui parcourt le tableau `explosions` et fait avancer le compteur de chaque explosion. Si un compteur dépasse 12, l'explosion doit être supprimée.
+
+<details>
+<summary>Voir la solution</summary>
+
+<img src="/images/expl2.png" />
+
+</details>
+
+4. Appelez la fonction `update_explosions()` dans `_update60()`.
+5. Dans `update_ennemis()`, lors de la collision, ajoutez une ligne qui crée l'explosion à l'endroit de l'impact du missile.
+
+<img src="/images/expl3.png" />
+
+La position du missile parcouru par la boucle for est `m.x` `m.y`. Vous pourrez décaler la position selon votre préférence.
+
+## 2. Afficher l'effet d'explosion
+
+L'effet d'explosion sera un cercle qui grandit rapidement. C'est un moyen simple de créer l'illusion.
+
+Voici comment on dessine un cercle dans PICO-8 :
+
+```lua
+circ(x, y, rayon, couleur)
+```
+
+La position `x` `y` représente le centre du cercle. Nous choisirons la couleur jaune (`10`) et allons dessiner un cercle pour chaque élément du tableau `explosions`.
+
+<img src="/images/expl4.png" />
+
+:::tip[aumenter le rayon]
+Pour faire grandir le cercle avec le temps, nous utilisons le compteur, qui est une valeur qui, elle aussi, grandit avec le temps. Ici, nous utilisons `compteur/3` pour obtenir un rayon allant de 1 à 4. En divisant le compteur par un nombre différent, vous obtiendrez une autre taille de cercle.
+:::
+
+Vous pouvez personnaliser l'explosion de plusieurs manières :
+
+- Changer la taille du cercle,
+- Changer la durée de l'animation, selon la valeur maximale du compteur,
+- Changer la couleur du cercle,
+- Décaler la position X et Y du cercle.
+
+<Box icon="question-mark">
+
+  ### Teste tes connaissances
+
+  1. La variable de compteur me permet...
+
+    <MultipleChoice>
+      <Option message="Mauvaise réponse. Le compteur me permet de connaître le stade de l'animation et de la faire progresser.">De connaître le nombre d'explosions</Option>
+      <Option isCorrect message="Bonne réponse. Le compteur me permet de connaître le stade de l'animation et de la faire progresser.">De connaître le stade de l'animation</Option>
+    </MultipleChoice>
+
+  2. La position X et Y de `circ()` concerne...
+
+    <MultipleChoice>
+      <Option message="Mauvaise réponse. Contrairement aux sprites dont on spécifie le point haut-gauche, on spécifie le centre des cercles.">Son coin haut-gauche</Option>
+      <Option isCorrect message="Bonne réponse. Contrairement aux sprites dont on spécifie le point haut-gauche, on spécifie le centre des cercles.">Son milieu</Option>
+      <Option message="Mauvaise réponse. Contrairement aux sprites dont on spécifie le point haut-gauche, on spécifie le centre des cercles.">Son coin bas-droite</Option>
+    </MultipleChoice>
+</Box>
+
+<Box icon="check-list">
+
+  ## Checklist
+
+  <Checklist>
+  - [ ] J'ai utilisé une variable de compteur pour contrôler mon animation dans le temps.
+  - [ ] J'ai dessiné un cercle avec `circ()`.
+  </Checklist>
+</Box>

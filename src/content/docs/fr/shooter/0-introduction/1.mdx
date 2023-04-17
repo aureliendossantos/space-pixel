@@ -1,0 +1,83 @@
+---
+type: tutorial
+title: Créer un nouveau projet
+---
+
+Nous allons commencer par créer une base de jeu toute simple avec un vaisseau affiché à l'écran. Voici le résultat que nous obtiendrons :
+
+![Capture d'écran](/images/flavie/1.png)
+
+<PreCheck>
+- Dessiner un sprite de vaisseau
+- Afficher le sprite dans le jeu avec du code
+</PreCheck>
+
+## 1. Créer le fichier du jeu
+
+Créez un nouveau jeu et donnez-lui un titre.
+
+Redémarrez PICO-8 et écrivez la commande :
+
+```shell
+save mon-shooter
+```
+
+Puis appuyez sur <kbd>Echap</kbd> pour entrer dans l'éditeur.
+
+## 2. Dessiner un vaisseau
+
+Dans l'éditeur de sprite, dessinez un vaisseau qui vous plaise.
+
+Si vous préférez partir d'un modèle, voici plusieurs formes de vaisseau que vous pouvez reproduire :
+
+![Dessins de vaisseaux](/images/vaisseaux.png)
+
+## 3. Afficher le vaisseau dans le jeu
+
+Vous vous souvenez peut-être du code à employer pour afficher un sprite sur l’écran de jeu. Voici les étapes à suivre :
+
+1. Dans le code de votre jeu, ajoutez les 3 fonctions de base de PICO-8 :
+
+```lua
+function _init()
+end
+
+function _update60()
+end
+
+function _draw()
+end
+```
+
+:::note[update60 ?]
+La fonction `_update()` se joue 30 fois par seconde, tandis que la fonction `_update60()` se joue 60 fois par seconde, ce qui est plus fluide et préférable pour un jeu d'action.
+:::
+
+2. Dans la fonction `_draw()`, affichez le sprite :
+    - utilisez la fonction `cls()` (*CLear Screen* : nettoyer l'écran) pour remplir le jeu d'un fond noir.
+    - utilisez ensuite la fonction `spr(1, 60, 60)` pour afficher le vaisseau au milieu de l'écran.
+
+:::note[Le milieu de l'écran]
+L'écran de PICO-8 mesure 128x128 pixels, et un sprite mesure 8x8 pixels. C'est pourquoi on centre le vaisseau en le plaçant en x = 60 et y = 60.
+:::
+
+<details>
+<summary>Voir la solution</summary>
+
+Votre code complet doit ressembler à ceci :
+
+![Code du jeu](/images/flavie/2.png)
+
+</details>
+
+Lancez le jeu avec <kbd>Ctrl</kbd> <kbd>R</kbd> : votre vaisseau s'affiche.
+
+<Box icon="check-list">
+
+## Checklist
+
+<Checklist>
+- [ ] J'ai dessiné un super vaisseau.
+- [ ] Mon vaisseau s'affiche dans le jeu avec <kbd>Ctrl</kbd> <kbd>R</kbd>.
+</Checklist>
+</Box>

@@ -1,0 +1,71 @@
+---
+type: tutorial
+title: Tirer des projectiles
+---
+
+<Video src="/videos/flavie/projectiles.mp4" controls />
+
+:::tip[écrire "end" automatiquement]
+Lorsque vous écrivez des fonctions et des conditions, vous pouvez ajouter automatiquement le `end` en utilisant <kbd>Shift</kbd> <kbd>Entrée</kbd>.
+:::
+
+## Bonus : ajoutez un effet sonore à votre tir
+
+Les effets sonores sont très importants pour ajouter de l'impact à votre jeu. Vous pouvez dessiner un effet sonore dans l'onglet correspondant. Vous avez besoin d'aide sur le fonctionnement des boutons ? Consultez la [fiche mémo des effets sonores](/fr/astuces/sons).
+
+Une fois que vous avez créé un son qui vous plaît, vous devez jouer l'effet sonore dans votre fonction `tirer()`.
+
+- Quel est le nom de la fonction que vous devez utiliser pour jouer un son ? <Spoiler>`sfx(0)`</Spoiler>
+
+Essayez par vous-même puis, si vous le souhaitez, vérifiez avec la solution.
+
+<details>
+<summary>Voir la solution dans la fonction `tirer()`</summary>
+
+Voici à quoi doit ressembler votre fonction `tirer()` si vous avez dessiné le son numéro `0`.
+
+```lua
+function tirer()
+    nv_missile = {
+        x = v.x
+        y = v.y
+        vitesse = 5
+    }
+    add(missiles, nv_missile)
+    sfx(0)
+end
+```
+
+</details>
+
+<Box icon="question-mark">
+
+  ### Teste tes connaissances
+
+  1. Comment peut-on animer la trajectoire d'un sprite ?
+
+    <MultipleChoice>
+      <Option message="Ce n’est pas la bonne réponse. Pour animer la trajectoire d'un sprite avec une fonction update, il faut définir une fonction update qui sera appelée automatiquement à chaque frame du jeu. Cette fonction doit modifier la position du sprite en fonction de son mouvement ou de sa vitesse.">En modifiant sa position directement dans la fonction _draw()</Option>
+      <Option message="Ce n’est pas la bonne réponse. Pour animer la trajectoire d'un sprite avec une fonction update, il faut définir une fonction update qui sera appelée automatiquement à chaque frame du jeu. Cette fonction doit modifier la position du sprite en fonction de son mouvement ou de sa vitesse.">En utilisant la fonction btnp()</Option>
+      <Option isCorrect message="C’est la bonne réponse. Pour animer la trajectoire d'un sprite avec une fonction update, il faut définir une fonction update qui sera appelée automatiquement à chaque frame du jeu. Cette fonction doit modifier la position du sprite en fonction de son mouvement ou de sa vitesse.">En utilisant une fonction _update()</Option>
+    </MultipleChoice>
+
+  2. Comment peut-on manipuler les éléments dans un tableau ?
+
+    <MultipleChoice>
+      <Option message="Ce n’est pas la bonne réponse. Pour manipuler les éléments dans un tableau, on utilise la boucle for. Pour cela, il faut utiliser la structure de boucle for i in all(tableau) do qui permet de parcourir tous les éléments du tableau. La variable i représente l'indice de l'élément en cours de traitement.">En créant un nouveau tableau à chaque fois qu'on veut y ajouter un élément</Option>
+      <Option isCorrect message="C’est la bonne réponse. Pour manipuler les éléments dans un tableau, on utilise la boucle for. Pour cela, il faut utiliser la structure de boucle for i in all(tableau) do qui permet de parcourir tous les éléments du tableau. La variable i représente l'indice de l'élément en cours de traitement.">En utilisant une boucle for</Option>
+      <Option message="Ce n’est pas la bonne réponse. Pour manipuler les éléments dans un tableau, on utilise la boucle for. Pour cela, il faut utiliser la structure de boucle for i in all(tableau) do qui permet de parcourir tous les éléments du tableau. La variable i représente l'indice de l'élément en cours de traitement.">En utilisant une boucle while</Option>
+    </MultipleChoice>
+</Box>
+
+<Box icon="check-list">
+
+  ## Checklist
+
+  <Checklist>
+  - [ ] J'ai réussi à dessiner un sprite projectile.
+  - [ ] J'ai réussi à manipuler un tableau avec des boucles “for”.
+  - [ ] J'ai réussi à animer la trajectoire d’un sprite avec une fonction update.
+  </Checklist>
+</Box>

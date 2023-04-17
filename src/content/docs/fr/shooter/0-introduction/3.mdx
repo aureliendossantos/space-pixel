@@ -1,0 +1,71 @@
+---
+type: tutorial
+title: Déplacer le vaisseau
+---
+
+<Video src="/videos/flavie/deplacement-vaisseau.mp4" controls />
+
+### Bonus : écrire les conditions en une seule ligne
+
+Lorsqu'il n'y a qu'une seule commande à l'intérieur de votre condition, vous pouvez l'écrire en une seule ligne.
+
+```lua del={1,2,3} ins={4}
+if btn(➡️) then
+    v.x += 1
+end
+if (btn(➡️)) v.x += 1
+```
+
+Vous pouvez voir que nous devons englober la condition entre parenthèses. Attention à bien respecter le nombre de parenthèses ouvrantes et fermantes !
+
+Essayez d'appliquer ce principe pour les 4 conditions dans `_update60()`.
+
+<details>
+<summary>Voir le code complet dans `_update60()`</summary>
+
+Voici le code pour les 4 touches :
+
+```lua
+function _update60()
+  if (btn(➡️)) v.x += 1
+  if (btn(⬅️)) v.x -= 1
+  if (btn(⬇️)) v.y += 1
+  if (btn(⬆️)) v.y -= 1
+end
+```
+
+</details>
+
+<Box icon="question-mark">
+  ### Teste tes connaissances
+
+  1. Que permet l'utilisation d'un tableau ?
+  <MultipleChoice>
+      <Option isCorrect message="C’est la bonne réponse. L'utilisation d'un tableau permet de stocker plusieurs informations au même endroit. Les tableaux sont des structures de données qui permettent d'organiser et de stocker des données de manière ordonnée.">De stocker plusieurs informations au même endroit.</Option>
+      <Option message="Ce n’est pas la bonne réponse. L'utilisation d'un tableau permet de stocker plusieurs informations au même endroit. Les tableaux sont des structures de données qui permettent d'organiser et de stocker des données de manière ordonnée.">De créer un jeu complexe.</Option>
+      <Option message="Ce n’est pas la bonne réponse. L'utilisation d'un tableau permet de stocker plusieurs informations au même endroit. Les tableaux sont des structures de données qui permettent d'organiser et de stocker des données de manière ordonnée.">De changer la couleur de fond de l'écran.</Option>
+    </MultipleChoice>
+
+    2. Comment appelle-t-on les caractéristiques d'un tableau ?
+    <MultipleChoice>
+      <Option isCorrect message="C’est la bonne réponse. Les clés décrivent les caractéristiques d’un tableau. Les clés permettent d’identifier chaque élément du tableau. Elles peuvent être de différents types, comme des nombres ou des chaînes de caractères, et permettent d'accéder à la valeur associée à chaque élément.">Des clés</Option>
+      <Option message="Ce n’est pas la bonne réponse. Les clés décrivent les caractéristiques d’un tableau. Les clés permettent d’identifier chaque élément du tableau. Elles peuvent être de différents types, comme des nombres ou des chaînes de caractères, et permettent d'accéder à la valeur associée à chaque élément.">Des emplacements</Option>
+      <Option message="Ce n’est pas la bonne réponse. Les clés décrivent les caractéristiques d’un tableau. Les clés permettent d’identifier chaque élément du tableau. Elles peuvent être de différents types, comme des nombres ou des chaînes de caractères, et permettent d'accéder à la valeur associée à chaque élément.">Des codes</Option>
+    </MultipleChoice>
+
+    3. Comment déplace-t-on le vaisseau dans ce tutoriel ?
+    <MultipleChoice>
+    <Option isCorrect message="C’est la bonne réponse. Pour déplacer le vaisseau, il est nécessaire d'utiliser les touches directionnelles du clavier. Elles sont associées à la fonction _update() du code. Cela permet de modifier la position du vaisseau à l'écran en fonction des entrées de l'utilisateur.">En appuyant sur les touches directionnelles du clavier.</Option>
+      <Option message="Ce n’est pas la bonne réponse. Pour déplacer le vaisseau, il est nécessaire d'utiliser les touches directionnelles du clavier (a). Elles sont associées à la fonction _update() du code. Cela permet de modifier la position du vaisseau à l'écran en fonction des entrées de l'utilisateur.">En cliquant sur le vaisseau avec la souris.</Option>
+      <Option isCorrect message="C’est la bonne réponse. Pour déplacer le vaisseau, il est nécessaire d'utiliser les touches directionnelles du clavier. Elles sont associées à la fonction _update() du code. Cela permet de modifier la position du vaisseau à l'écran en fonction des entrées de l'utilisateur.">En utilisant la fonction _update() du code.</Option>
+    </MultipleChoice>
+</Box>
+
+<Box icon="check-list">
+
+## Checklist
+
+<Checklist>
+- [ ] J'ai réussi à appliquer un variable de type "tableau" et à accéder à ses valeurs afin de déplacer mon vaisseau.
+</Checklist>
+</Box>

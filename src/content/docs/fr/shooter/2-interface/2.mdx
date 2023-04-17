@@ -1,0 +1,37 @@
+---
+type: tutorial
+title: Détecter la défaite
+---
+
+Avant de créer l'écran de game over, nous avons besoin d'une condition de défaite.
+
+Pour le moment, le seul moyen de perdre dans le jeu serait d'entrer directement en contact avec les ennemis. Votre jeu comportera sans doute d'autres dangers par la suite, mais ce sera notre première condition de game over.
+
+1. Dans `update_ennemis()`, écrivez une condition qui permet de vérifier si le joueur est entré en contact avec un ennemi.
+2. Nous n'avons pas encore d'écran de game over. A l'intérieur de la condition, appelez simplement la fonction `_init()`, qui aura pour effet de redémarrer le jeu.
+
+<details>
+<summary>Voir la solution</summary>
+
+A l'intérieur de la fonction `update_ennemis()`, au sein de la boucle `for e in all(ennemis)`, écrivez :
+
+```lua
+if collision(e, v) then
+  _init()
+end
+```
+
+</details>
+
+:::note[à propos de _init()]
+`_init()` ne redémarre pas vraiment le jeu, mais comme la fonction remet toutes les variables à leurs valeurs d'origine, cela produit le même effet.
+:::
+
+<Box icon="check-list">
+
+  ## Checklist
+
+  <Checklist>
+  - [ ] J'ai appelé `_init()` pour réinitialiser le jeu lorsque je touche un ennemi.
+  </Checklist>
+</Box>

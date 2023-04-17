@@ -1,0 +1,83 @@
+---
+title: Essayer des jeux
+---
+
+<PreCheck>
+  - Essayer des jeux publiés sur Internet
+  - Installer les démos incluses à PICO-8
+</PreCheck>
+
+## Essayer des jeux sur Internet
+
+Voici quelques recommandations de jeux que vous pouvez essayer pour mieux comprendre le style de PICO-8. Ils se jouent généralement au clavier, avec les flèches et deux boutons d'actions.
+
+:::note[Touches des jeux PICO-8]
+<kbd>←</kbd> <kbd>→</kbd> <kbd>↑</kbd> <kbd>↓</kbd> Se déplacer
+
+<kbd>X</kbd> Action n°1
+
+<kbd>C</kbd> Action n°2
+:::
+
+- [Celeste Classic](https://mattmakesgames.itch.io/celesteclassic) (jeu de plateforme)
+- [The Lair](https://krajzeg.itch.io/the-lair) (jeu de combat)
+- [Just One Boss](https://www.lexaloffle.com/bbs/?tid=30767) (obstacles à éviter)
+
+Il existe une multitude d'autres jeux PICO-8 sur Internet. Certains d'entre eux sont multijoueur : deux personnes peuvent jouer sur le même clavier, et vous pouvez même accueillir des joueurs supplémentaires en branchant des manettes.
+
+## Installer les démos de PICO-8
+
+PICO-8 inclut également des démos à l'intérieur du logiciel. Pour les essayer, **démarrez PICO-8** (ou redémarrez-le pour le remettre à zéro) et dans l'écran d'accueil noir, tapez la commande :
+
+```shell
+install_demos
+```
+
+Appuyez sur <kbd>Entrée</kbd> pour valider et installer les démos qui seront installées dans le dossier suivant :
+
+<FileTree>
+- carts/ Le dossier des cartouches de jeu
+  - demos/ Le dossier des démos
+    - api.p8
+    - collide.p8
+    - bounce.p8
+    - wander.p8
+    - waves.p8
+    - drippy.p8
+    - dots3d.p8
+    - hello.p8
+    - cast.p8
+    - jelpi.p8
+    - automata.p8
+    - sort.p8
+</FileTree>
+
+Par défaut, vous vous trouvez dans le dossier `carts`. Pour entrer dans le dossier `demos`, tapez la commande :
+
+```shell
+cd demos
+```
+
+Puis chargez le jeu `jelpi.p8` (par exemple) en tapant :
+
+```shell
+load jelpi
+```
+
+Enfin, lancez le jeu avec <kbd>Ctrl</kbd> <kbd>R</kbd> ou bien en tapant la commande :
+
+```shell
+run
+```
+
+Pour arrêter un jeu, appuyez sur <kbd>Echap</kbd> puis réutilisez la commande `load ...` pour charger une autre démo selon votre curiosité.
+
+<Box icon="check-list">
+
+  ## Checklist
+
+  <Checklist>
+  - [ ] J'ai joué à un jeu PICO-8 sur Internet.
+  - [ ] J'ai réussi à charger les démos à l'intérieur de PICO-8.
+  </Checklist>
+</Box>

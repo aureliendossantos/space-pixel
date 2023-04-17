@@ -1,0 +1,19 @@
+---
+import Tabs from './Tabs';
+---
+
+<Tabs client:visible sharedStore="package-managers">
+	<Fragment slot="tab.npm">Windows</Fragment>
+	<Fragment slot="tab.pnpm">Mac</Fragment>
+	<Fragment slot="tab.yarn">Linux</Fragment>
+
+	<Fragment slot="panel.npm">
+		<slot name="Windows" />
+	</Fragment>
+	<Fragment slot="panel.pnpm">
+		<slot name="Mac" />
+	</Fragment>
+	<Fragment slot="panel.yarn">
+		<slot name="Linux" />
+	</Fragment>
+</Tabs>
